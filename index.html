@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emilie Bressange – Portfolio communication & événementiel</title>
+<meta name="description" content="Portfolio d’Emilie Bressange, jeune diplômée en communication : Roger & Gallet, Bodega Dimobe, Levi’s.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#c1b5a7; --bg-deep:#b3a595; --card:#d8cdbf; --cream:#f7f9f0;
+  --crimson:#a7112e; --crimson-deep:#6e0a1d; --ink:#33191f; --mute:#4d3b37;
+  --line:rgba(51,25,31,.24); --yellow:#ffec00;
+  --serif:"Abril Fatface","Bodoni 72","Didot","Times New Roman",serif;
+  --sans:"Figtree",Verdana,Tahoma,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#c1b5a7;--bg-deep:#b3a595;--ink:#33191f;color-scheme:light}}
+:root[data-theme="dark"]{--bg:#c1b5a7;--bg-deep:#b3a595;--ink:#33191f}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg-deep);z-index:40}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--crimson);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(193,181,167,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:60px}
+.brand{font-family:var(--serif);font-size:1.25rem;letter-spacing:.02em;text-decoration:none;color:var(--crimson)}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-weight:500;color:var(--mute);padding:.4rem 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--ink);border-color:var(--crimson)}
+
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--crimson);margin:0;line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+.display{font-size:clamp(3rem,10.5vw,8.2rem)}
+h2{font-size:clamp(2.2rem,6vw,4rem)}
+h3{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+.lede{font-size:clamp(1.15rem,2.2vw,1.45rem);color:var(--ink);max-width:34ch;line-height:1.45}
+.sub{letter-spacing:.28em;text-transform:uppercase;font-size:.85rem;color:var(--mute);font-weight:500}
+.btn{display:inline-block;text-decoration:none;background:var(--crimson);color:var(--cream);font-weight:700;padding:.85rem 1.6rem;border-radius:999px;border:2px solid var(--crimson);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--crimson)}
+
+.hero{display:grid;align-content:start;padding:2.5rem 0 0}
+.hero .sub{margin:1.2rem 0 2.4rem}
+.hero .lede{margin:0 0 2.2rem}
+.hero .row{display:flex;gap:.9rem;flex-wrap:wrap}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.62fr);gap:2rem;align-items:center}
+.stack{position:relative;aspect-ratio:4/5;max-width:380px;justify-self:end;width:100%}
+.stack img{position:absolute;border-radius:18px;object-fit:cover;box-shadow:0 18px 40px rgba(51,25,31,.3);border:3px solid var(--cream)}
+.stack img:nth-child(1){width:62%;aspect-ratio:3/4;left:0;top:0;transform:rotate(-4deg)}
+.stack img:nth-child(2){width:58%;aspect-ratio:1/1;right:0;top:26%;transform:rotate(3deg)}
+.stack img:nth-child(3){width:56%;aspect-ratio:4/3;left:8%;bottom:0;transform:rotate(-2deg)}
+.hero-in{animation:rise .9s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero-in{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+
+section.block{padding:5rem 0}
+#apropos.block{padding-top:3.5rem}
+.about{display:grid;grid-template-columns:clamp(150px,17vw,210px) minmax(0,1fr);gap:clamp(1.4rem,3.5vw,2.8rem);align-items:center}
+.about .pic{border-radius:46% 54% 50% 50% / 38% 40% 60% 62%;overflow:hidden;background:var(--card);aspect-ratio:1/1.15}
+.about .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.about h2{margin-bottom:1.3rem}
+.about p{max-width:62ch;margin:0 0 1rem}
+.about .seek{margin-top:1.4rem;padding:1rem 1.2rem;border-left:4px solid var(--crimson);background:var(--card);border-radius:0 12px 12px 0}
+
+.projects h2{margin-bottom:.8rem}
+.projects .intro{color:var(--mute);max-width:52ch;margin:0 0 2.4rem}
+.pgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem}
+.pcard{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px;border-radius:22px;overflow:hidden;text-decoration:none;isolation:isolate;color:var(--cream)}
+.pcard .imgs{position:absolute;inset:0;z-index:-1;display:grid}
+.pcard .imgs img{width:100%;height:100%;object-fit:cover}
+.pcard::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(51,12,22,0) 5%,rgba(51,12,22,.78) 45%,rgba(51,12,22,.95) 85%)}
+.pcard .txt{padding:1.5rem 1.6rem 1.6rem}
+.pcard .tag{display:inline-block;font-size:.8rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;margin-bottom:.7rem;color:#1a0f05}
+.pcard h3{color:var(--cream)}
+.pcard p{margin:.6rem 0 0;color:var(--cream);max-width:46ch}
+.pcard .go{margin-top:1rem;font-weight:700;color:var(--yellow)}
+.pcard:hover img{transform:scale(1.03)}
+.pcard img{transition:transform .5s}
+.p1{grid-column:span 6;min-height:440px}
+.p1 .imgs{grid-template-columns:1fr 1fr 1fr}
+.p2{grid-column:span 3}.p3{grid-column:span 3}
+.pcard .imgs.two{grid-template-columns:1fr 1fr}
+@media (prefers-reduced-motion:reduce){.pcard img{transition:none}.pcard:hover img{transform:none}}
+
+.contact h2{margin-bottom:1.6rem}
+.mail{display:inline-block;font-family:var(--serif);font-size:clamp(1.5rem,5.4vw,3.4rem);color:var(--ink);text-decoration:none;border-bottom:3px solid var(--crimson);line-height:1.2;word-break:break-word}
+.mail:hover{color:var(--crimson)}
+.tel{display:block;margin-top:1.4rem;font-size:1.3rem;text-decoration:none;color:var(--mute)}
+.tel:hover{color:var(--crimson)}
+footer{padding:2.5rem 0 3.5rem;color:var(--mute);font-size:.9rem;border-top:1px solid var(--line)}
+
+.back{display:inline-block;margin:1.6rem 0 0;text-decoration:none;color:var(--mute);font-weight:500}
+.back:hover{color:var(--crimson)}
+.phg{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:2rem;align-items:center}
+.ph{padding:2.2rem 0 2rem}
+.ph .sub{margin:1.2rem 0 1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.chip{border:1px solid var(--line);border-radius:999px;padding:.3rem .9rem;font-size:.9rem;color:var(--mute)}
+.ph .lede{max-width:46ch;margin-top:1.4rem}
+.fiche{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:0 0 2rem}
+.fiche div{background:var(--card);border-radius:14px;padding:1rem 1.2rem}
+.fiche b{display:block;font-family:var(--serif);font-weight:400;color:var(--crimson);font-size:1.15rem;margin-bottom:.2rem;text-transform:uppercase}
+.story{padding:2.6rem 0;border-top:1px solid var(--line)}
+.story > h2{margin-bottom:2rem}
+.steps{display:grid;grid-template-columns:200px minmax(0,1fr);gap:1.4rem 2.5rem}
+.steps dt{font-family:var(--serif);color:var(--crimson);font-size:1.35rem;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
+.steps dd{margin:0 0 .6rem;max-width:62ch}
+.steps dd ul{margin:.3rem 0 0;padding-left:1.1rem}
+.steps dd li{margin:.25rem 0}
+.stat{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin:.2rem 0 .4rem}
+.stat b{font-family:var(--serif);font-weight:400;font-size:clamp(3.6rem,10vw,6.5rem);color:var(--crimson);line-height:1}
+.stat span{max-width:30ch;font-size:1.15rem}
+.gal{display:grid;gap:1rem;margin-top:2rem}
+.gal figure{margin:0}
+.gal img{width:100%;border-radius:14px;cursor:zoom-in;background:var(--card)}
+.gal figcaption{font-size:.88rem;color:var(--mute);margin-top:.5rem}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g7{grid-template-columns:repeat(7,1fr);gap:.6rem}
+.g7 img{border-radius:10px}
+.fit{align-items:start}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:2rem}
+.sw{border-radius:14px;padding:1rem 1rem 1.1rem;min-height:130px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;font-size:.92rem;line-height:1.35}
+.sw b{display:block;font-size:1rem}
+.sw small{opacity:.8}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.ba .col{border-radius:18px;padding:1.2rem}
+.ba .col.after{background:var(--cream);color:#2a1a1d}
+.ba .col.before{background:var(--card);color:#222}
+.ba .lab{font-family:var(--serif);text-transform:uppercase;font-size:1.3rem;margin-bottom:.8rem;color:var(--crimson)}
+.ba .col > img{border-radius:8px;width:100%}
+.ba .logos{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.8rem}
+.ba .logos img{max-height:96px;width:auto}
+.ba p{font-size:.92rem;margin:.6rem 0 0}
+.paperlbl{display:inline-block;background:var(--yellow);color:var(--crimson-deep);font-weight:700;padding:.15rem .7rem;border-radius:4px;transform:rotate(-1.5deg);margin-left:.4rem}
+h2 .paperlbl{font-family:var(--sans);font-size:.38em;letter-spacing:0;text-transform:none;vertical-align:middle;margin-left:.8rem;line-height:1.4}
+.nextp{padding:3rem 0 1rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.nextp a{text-decoration:none;font-family:var(--serif);font-size:1.6rem;color:var(--ink);text-transform:uppercase}
+.nextp a:hover{color:var(--crimson)}
+.nextp small{display:block;font-family:var(--sans);font-size:.85rem;color:var(--mute);text-transform:none}
+
+dialog{border:0;padding:0;background:transparent;max-width:94vw;max-height:92vh}
+dialog::backdrop{background:rgba(30,12,16,.88)}
+dialog img{max-height:90vh;max-width:94vw;border-radius:10px;margin:auto}
+.view{display:none}.view.on{display:block}
+
+@media (max-width:820px){
+  nav ul{gap:1rem}
+  .hero .wrap{grid-template-columns:1fr}
+  .stack{display:none}
+  .phg{grid-template-columns:1fr}
+  .fiche{grid-template-columns:1fr}
+  .about{display:block}
+  .about .pic{float:left;width:112px;margin:.2rem 1.1rem .5rem 0}
+  .about h2{font-size:2rem;margin-top:.4rem}
+  .about .seek{clear:both}
+  .p2,.p3{grid-column:span 6}
+  .p1 .imgs{grid-template-columns:1fr 1fr}
+  .p1 .imgs img:nth-child(3){display:none}
+  .steps{grid-template-columns:1fr;gap:.3rem}
+  .steps dt{margin-top:1.2rem}
+  .g3{grid-template-columns:1fr 1fr}
+  .g4{grid-template-columns:1fr 1fr}
+  .g7{grid-template-columns:repeat(4,1fr)}
+  .swatches{grid-template-columns:1fr 1fr}
+  .ba{grid-template-columns:1fr}
+  section.block{padding:3.5rem 0}
+}
+@media (max-width:480px){.brand{font-size:1.05rem}nav a{font-size:.95rem}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Emilie Bressange</a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= ACCUEIL ================= -->
+<div class="view" id="v-home">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+      <h1 class="display">Portfolio</h1>
+      <p class="sub">Emilie Bressange · Communication &amp; événementiel</p>
+      <p class="lede">Une bodega espagnole, une maison de parfum, un jean californien&nbsp;: trois marques, trois défis, une même question&nbsp;: qu’est-ce qui fait qu’on s’en souvient&nbsp;?</p>
+      <div class="row">
+        <a class="btn" href="#projets">Voir mes projets</a>
+        <a class="btn ghost" href="#contact">Me contacter</a>
+      </div>
+      </div>
+      <div class="stack" aria-hidden="true"><img src="images/flyer.jpg" alt=""><img src="images/mood.jpg" alt=""><img src="images/l_ny.jpg" alt=""></div>
+    </div>
+  </section>
+
+  <section class="block" id="apropos">
+    <div class="wrap about">
+      <div class="pic"><img src="images/portrait.png" alt="Portrait d’Emilie Bressange"></div>
+      <div>
+        <h2>À propos de moi</h2>
+        <p>Jeune diplômée en communication, j’ai appris à travailler sur des projets du concept stratégique jusqu’au moindre détail d’exécution.</p>
+        <p>Dans ce portfolio, vous trouverez trois univers différents, avec trois problèmes différents. Tous menés dans un objectif commun&nbsp;: trouver l’idée qui fait qu’on se souvient d’une marque plutôt que d’une autre.</p>
+        <p class="seek">Aujourd’hui, je cherche un poste en <b>communication</b> ou en <b>événementiel</b> pour continuer à créer des expériences qui marquent.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block projects" id="projets">
+    <div class="wrap">
+      <h2>Mes projets</h2>
+      <p class="intro">Trois projets, du digital au packaging en passant par l’événement. Chacun raconte le défi, mon idée et ce que j’ai réalisé.</p>
+      <div class="pgrid">
+        <a class="pcard p1" href="#roger-gallet">
+          <div class="imgs"><img src="images/flyer.jpg" alt=""><img src="images/box.jpg" alt=""><img src="images/rgp1.jpg" alt=""></div>
+          <div class="txt">
+            <span class="tag" style="background:var(--rg)">Gamification · Outils créés de A à Z</span>
+            <h3>Roger &amp; Gallet</h3>
+            <p>Un quiz qui devine ton parfum préféré, et un jeu de familles pour former les équipes en pharmacie. 95&nbsp;% des clients retrouvent leur coup de cœur olfactif grâce au quiz.</p>
+            <div class="go">Voir le projet →</div>
+          </div>
+        </a>
+        <a class="pcard p2" href="#dimobe">
+          <div class="imgs"><img src="images/mood.jpg" alt="" style="object-position:center"></div>
+          <div class="txt">
+            <span class="tag" style="background:#c88688">Rebranding · Mémoire de fin d’études</span>
+            <h3>Bodega Dimobe</h3>
+            <p>Redonner une identité désirable à une bodega familiale, sans perdre son lien avec le terroir.</p>
+            <div class="go">Voir le projet →</div>
+          </div>
+        </a>
+        <a class="pcard p3" href="#levis">
+          <div class="imgs two"><img src="images/l_trio.jpg" alt=""><img src="images/l_piano.jpg" alt=""></div>
+          <div class="txt">
+            <span class="tag" style="background:#ffe94a">Stratégie de marque · Événement</span>
+            <h3>Levi’s</h3>
+            <p>Une campagne, un co-branding avec Birkenstock et un événement underground à Madrid. Projet de cours.</p>
+            <div class="go">Voir le projet →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <h2>Me contacter</h2>
+      <a class="mail" href="mailto:ebressange@gmail.com">ebressange@gmail.com</a>
+      <a class="tel" href="tel:+33638589862">+33 6 38 58 98 62</a>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ROGER & GALLET ================= -->
+<div class="view" id="v-roger-gallet">
+  <div class="wrap">
+    <a class="back" href="#projets">← Tous les projets</a>
+    <div class="phg"><div class="ph">
+      <h1 class="display" style="font-size:clamp(3rem,10vw,7.5rem)">Roger<br>&amp; Gallet</h1>
+      <p class="sub">Gamification en point de vente</p>
+      <p class="lede">Deux outils ludiques, un pour les clients, un pour les équipes qui les conseillent, conçus à 100&nbsp;% par moi.</p>
+      <div class="chips"><span class="chip">Quiz digital + stopper en pharmacie</span><span class="chip">Jeu de cartes + packaging</span></div>
+    </div><div class="stack" aria-hidden="true"><img src="images/flyer.jpg" alt=""><img src="images/box.jpg" alt=""><img src="images/rgp1.jpg" alt=""></div></div>
+    <div class="fiche"><div><b>Contexte</b>Outils conçus pour la marque, toujours utilisés en pharmacie</div><div><b>Cibles</b>Consommateurs, pharmaciens, commerciaux et vendeurs</div><div><b>Livrables</b>Quiz interactif, stopper QR, jeu de cartes, packaging</div></div>
+
+    <div class="story">
+      <h2>Le quiz «&nbsp;Quel parfum R&amp;G êtes&#8209;vous&nbsp;?&nbsp;»</h2>
+      <dl class="steps">
+        <dt>Le défi</dt><dd>Aider chaque client à trouver, dans toute la gamme, la fragrance qui lui correspond vraiment.</dd>
+        <dt>Mon idée</dt><dd>Un questionnaire interactif qui détecte automatiquement le parfum idéal selon les réponses, accessible en quelques secondes avec un simple QR code.</dd>
+        <dt>Ce que j’ai réalisé</dt><dd><ul><li>La conception du questionnaire de A à Z</li><li>Un parcours fluide, du questionnaire au produit recommandé, pensé pour convertir la découverte en achat</li><li>Le stopper «&nbsp;¿Qué fragancia eres?&nbsp;» avec QR code et éventail offert, pour l’activation en pharmacie</li></ul></dd>
+        <dt>Le résultat</dt><dd><div class="stat"><b>95&nbsp;%</b><span>des clients retrouvent leur coup de cœur olfactif grâce au quiz</span></div>L’outil est toujours utilisé en pharmacie aujourd’hui.</dd>
+      </dl>
+      <div class="gal g3 fit">
+        <figure><img src="images/quiz1.jpg" alt="Écran du quiz : question sur la manière dont on souhaite être perçu" loading="lazy"><figcaption>Le questionnaire</figcaption></figure>
+        <figure><img src="images/quiz2.jpg" alt="Écran du résultat : fragrance idéale Néroli" loading="lazy"><figcaption>Le résultat personnalisé</figcaption></figure>
+        <figure><img src="images/quiz3.jpg" alt="Page produit Néroli sur le site Roger & Gallet" loading="lazy"><figcaption>Du quiz à la page produit</figcaption></figure>
+      </div>
+      <div class="gal g3 fit">
+        <figure><img src="images/flyer.jpg" alt="Stopper ¿Qué fragancia eres? avec QR code" loading="lazy"><figcaption>Le stopper à scanner</figcaption></figure>
+        <figure><img src="images/shelf.jpg" alt="Le stopper en place sur un linéaire en pharmacie" loading="lazy"><figcaption>En pharmacie</figcaption></figure>
+        <figure><img src="images/rgp1.jpg" alt="Flacon Roger & Gallet entouré de fleurs orange" loading="lazy"><figcaption>L’univers visuel de la marque</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="story">
+      <h2>Le jeu des 7 familles olfactives</h2>
+      <dl class="steps">
+        <dt>Le défi</dt><dd>Aider pharmaciens, commerciaux et vendeurs à maîtriser chaque fragrance dans sa globalité.</dd>
+        <dt>Mon idée</dt><dd>Un outil de formation ludique inspiré du jeu des 7 familles, décliné en 11 familles olfactives. Chaque «&nbsp;famille&nbsp;» est un parfum. Chaque «&nbsp;membre de la famille&nbsp;» est une caractéristique clé&nbsp;: bénéfice, famille olfactive, notes de tête, de cœur et de fond, nez, phrase d’accroche.</dd>
+        <dt>Ce que j’ai réalisé</dt><dd><ul><li>Les cartes de chaque famille, avec une couleur propre par parfum</li><li>Les règles du jeu</li><li>Le packaging de la boîte, jusqu’au fichier de production : plan de découpe, marges techniques et fonds perdus pour une exécution fidèle chez l’imprimeur</li></ul></dd>
+      </dl>
+      <div class="gal g7">
+        <img src="images/f1.jpg" alt="Carte Néroli : bénéfice relaxant" loading="lazy">
+        <img src="images/f2.jpg" alt="Carte Néroli : famille florale" loading="lazy">
+        <img src="images/f3.jpg" alt="Carte Néroli : mot clé, un bain de soleil" loading="lazy">
+        <img src="images/f4.jpg" alt="Carte Néroli : note de tête" loading="lazy">
+        <img src="images/f5.jpg" alt="Carte Néroli : note de cœur" loading="lazy">
+        <img src="images/f6.jpg" alt="Carte Néroli : note de fond" loading="lazy">
+        <img src="images/f7.jpg" alt="Carte Néroli : maître parfumeur" loading="lazy">
+      </div>
+      <p style="color:var(--mute);font-size:.9rem;margin:.6rem 0 0">Exemple de famille : Néroli, avec son bénéfice, sa famille, son mot clé, ses trois notes et son parfumeur.</p>
+      <div class="swatches" style="grid-template-columns:repeat(3,1fr);max-width:560px">
+        <div class="sw" style="background:#6b9558"><b>Vert</b><small>#6b9558</small></div>
+        <div class="sw" style="background:#fddfc7;color:#4a2a12"><b>Pêche</b><small>#fddfc7</small></div>
+        <div class="sw" style="background:#f9a269;color:#4a2a12"><b>Orange</b><small>#f9a269</small></div>
+      </div>
+      <div class="gal g2 fit">
+        <figure><img src="images/box.jpg" alt="Boîte du jeu de familles Roger & Gallet" loading="lazy"><figcaption>La boîte du jeu</figcaption></figure>
+        <figure><img src="images/pack.jpg" alt="Plan de découpe du packaging avec fonds perdus et rainages" loading="lazy"><figcaption>Le fichier de production : découpe, rainages, fonds perdus</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="nextp">
+      <span></span>
+      <a href="#dimobe"><small>Projet suivant</small>Bodega Dimobe →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DIMOBE ================= -->
+<div class="view" id="v-dimobe">
+  <div class="wrap">
+    <a class="back" href="#projets">← Tous les projets</a>
+    <div class="phg"><div class="ph">
+      <h1 class="display" style="font-size:clamp(3rem,10vw,7.5rem)">Bodega<br>Dimobe</h1>
+      <p class="sub">Rebranding d’une marque espagnole</p>
+      <p class="lede">La refonte complète de l’identité d’une bodega familiale, menée dans le cadre de mon mémoire de fin d’études.</p>
+      <div class="chips"><span class="chip">Logo &amp; isotype</span><span class="chip">Palette &amp; typographie</span><span class="chip">Moodboard</span><span class="chip">Site web</span></div>
+    </div><div class="stack" aria-hidden="true"><img src="images/mood.jpg" alt=""><img src="images/mock.jpg" alt=""><img src="images/brandph.jpg" alt=""></div></div>
+    <div class="fiche"><div><b>Contexte</b>Mémoire de fin d’études (master)</div><div><b>Cible</b>Les consommateurs de la bodega, en ligne et sur le terrain</div><div><b>Livrables</b>Logo et isotype, palette, typographie, moodboard, site web</div></div>
+
+    <div class="story">
+      <dl class="steps">
+        <dt>Le défi</dt><dd>Moderniser l’image de la marque et la rendre plus désirable sur le plan digital, tout en conservant son ancrage traditionnel et son lien avec le terroir.</dd>
+        <dt>Mon idée</dt><dd>Passer d’une image rationnelle et traditionnelle à une identité qui parle d’émotion et d’expérience sensorielle. Les taches de vin et les anneaux laissés par un verre racontent le moment de la dégustation, et identifient le secteur dès le premier regard.</dd>
+        <dt>Ce que j’ai réalisé</dt><dd><ul><li>Le logo et l’isotype (un anneau de verre + le «&nbsp;D&nbsp;»), déclinables sur sacs, stickers, caisses de vin…</li><li>La palette de quatre couleurs et la typographie</li><li>Un moodboard d’éléments visuels pour les réseaux sociaux et les supports imprimés</li><li>La refonte du site web</li></ul></dd>
+      </dl>
+      <div class="ba">
+        <div class="col before">
+          <div class="lab">Avant</div>
+          <div class="logos"><img src="images/old_logo.png" alt="Ancien logo Dimobe, manuscrit avec un tonneau"></div>
+          <img src="images/old_strip.jpg" alt="Ancien univers visuel : vignes, tonneaux, travail de la terre" loading="lazy">
+          <p>Noir et rouge, manuscrit, images de terroir classiques.</p>
+        </div>
+        <div class="col after">
+          <div class="lab">Après</div>
+          <div class="logos"><img src="images/logo.png" alt="Nouveau logo Dimobe avec taches de vin"><img src="images/iso.png" alt="Nouvel isotype : le D et un anneau de verre" style="max-height:80px"></div>
+          <img src="images/brandph.jpg" alt="Nouvel univers visuel : olives, raisin, bouteille" loading="lazy">
+          <p>Taches de vin, quatre couleurs de vignoble, photos de dégustation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story">
+      <h2>Concept</h2>
+      <dl class="steps">
+        <dt>Logo &amp; isotype</dt><dd>Les taches de vin et les anneaux de dégustation identifient immédiatement le secteur viticole, tout en évoquant le moment du partage. L’isotype se décline sur tous les supports : packaging, réseaux sociaux, merchandising.</dd>
+        <dt>Typographie</dt><dd>Roboto, moderne et lisible, pour laisser aux éléments visuels du logo le premier rôle.</dd>
+      </dl>
+      <div class="swatches">
+        <div class="sw" style="background:#a1a56a;color:#232614"><b>Vert olive</b>Nature, vignoble<small>#a1a56a</small></div>
+        <div class="sw" style="background:#c88688;color:#3a1417"><b>Rose poudré</b>Élégance, modernité<small>#c88688</small></div>
+        <div class="sw" style="background:#8c3d46"><b>Bordeaux doux</b>Tradition, passion<small>#8c3d46</small></div>
+        <div class="sw" style="background:#521b23"><b>Bordeaux intense</b>Caractère, maturité<small>#521b23</small></div>
+      </div>
+      <div class="gal g2 fit">
+        <figure><img src="images/mood.jpg" alt="Moodboard : verres à vin, grappes, taches et anneaux de vin" loading="lazy"><figcaption>Le moodboard de la marque</figcaption></figure>
+        <figure><img src="images/mock.jpg" alt="Logo et isotype sur étiquette, sac, carte et sticker" loading="lazy"><figcaption>Le logo et l’isotype en situation</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="story">
+      <h2>Site web</h2>
+      <dl class="steps">
+        <dt>Mon idée</dt><dd>Un rebranding doit être intégral pour ne pas créer de confusion. J’ai donc déployé la nouvelle identité sur le site, l’un des canaux où le consommateur s’informe le plus : nouveau logo, nouvelles typographies, images alignées sur le nouveau concept.</dd>
+        <dt>Ce que j’ai ajouté</dt><dd>Un espace de réservation œnotourisme et un calendrier de disponibilités, pour renforcer l’expérience client en ligne.</dd>
+      </dl>
+      <div class="gal"><figure><img src="images/web.jpg" alt="Page d’accueil du nouveau site Bodegas Dimobe" loading="lazy" style="max-width:760px"></figure></div>
+    </div>
+
+    <div class="nextp">
+      <a href="#roger-gallet"><small>Projet précédent</small>← Roger &amp; Gallet</a>
+      <a href="#levis"><small>Projet suivant</small>Levi’s →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= LEVI'S ================= -->
+<div class="view" id="v-levis">
+  <div class="wrap">
+    <a class="back" href="#projets">← Tous les projets</a>
+    <div class="phg"><div class="ph">
+      <h1 class="display" style="font-size:clamp(3.4rem,12vw,9rem)">Levi’s</h1>
+      <p class="sub">Stratégie de marque &amp; événementiel</p>
+      <p class="lede">Une stratégie de marque complète imaginée pour Levi’s&nbsp;: une campagne, un co-branding et un événement. <span class="paperlbl">Projet de cours, fictif</span></p>
+      <div class="chips"><span class="chip">Cours de branding corporate</span><span class="chip">Campagne #MyFirstLevi’s</span><span class="chip">Levi’s × Birkenstock</span><span class="chip">The Denim Revival</span></div>
+    </div><div class="stack" aria-hidden="true"><img src="images/l_trio.jpg" alt=""><img src="images/l_piano.jpg" alt=""><img src="images/l_ny.jpg" alt=""></div></div>
+    <div class="fiche"><div><b>Contexte</b>Cours de branding corporate (projet fictif)</div><div><b>Cible</b>Un public jeune, authentique et engagé</div><div><b>Livrables</b>Campagne, capsule de co-branding, événement</div></div>
+
+    <div class="story">
+      <dl class="steps">
+        <dt>Le défi</dt><dd>Réaffirmer l’intemporalité de Levi’s et sa connexion avec un public jeune, authentique et engagé.</dd>
+        <dt>Mon idée</dt><dd>Trois leviers complémentaires&nbsp;: l’émotion avec une campagne, la nouveauté avec un co-branding responsable, l’expérience avec un événement de marque.</dd>
+      </dl>
+    </div>
+
+    <div class="story">
+      <h2>Branding émotionnel <span class="paperlbl">#MyFirstLevi’s</span></h2>
+      <dl class="steps">
+        <dt>Le constat</dt><dd>Le jean est un objet de mémoire. Il se transmet de génération en génération et forme un lien affectif très fort. Parfois, notre premier Levi’s a déjà eu une vie.</dd>
+        <dt>La campagne</dt><dd>Un déploiement fictif dans quatre villes espagnoles (Madrid, Barcelone, Séville, La Corogne) : affichage urbain sur les points clés de la ville, abribus, stations de métro et vitrines des boutiques Levi’s.</dd>
+      </dl>
+      <div class="gal g3 fit">
+        <figure><img src="images/l_kid.jpg" alt="Mockup #MyFirstLevis : enfant à côté d’un jean" loading="lazy"></figure>
+        <figure><img src="images/l_bath.jpg" alt="Mockup #MyFirstLevis : deux jeunes filles et des vêtements" loading="lazy"></figure>
+        <figure><img src="images/l_dad.jpg" alt="Un père et son enfant se transmettent un jean" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="story">
+      <h2>Co-branding <span class="paperlbl">Levi’s × Birkenstock</span></h2>
+      <dl class="steps">
+        <dt>Pourquoi</dt><dd>Des valeurs communes&nbsp;: authenticité, esprit décontracté, intemporalité, et un même public.</dd>
+        <dt>La capsule</dt><dd>Les jeans Levi’s défectueux ou de seconde main sont recyclés pour créer des Birkenstock en tissu denim, dans une logique de mode durable.</dd>
+      </dl>
+      <div class="gal g3 fit">
+        <figure><img src="images/l_lab.jpg" alt="Étiquettes de jeans Levi’s" loading="lazy"></figure>
+        <figure><img src="images/l_bk1.jpg" alt="Birkenstock Boston en daim" loading="lazy"></figure>
+        <figure><img src="images/l_bk2.jpg" alt="Birkenstock bleue en tissu côtelé" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="story">
+      <h2>L’événement <span class="paperlbl">The Denim Revival</span></h2>
+      <dl class="steps">
+        <dt>Le concept</dt><dd>Un événement underground, inspiré du New York cosmopolite des années 2000, qui mêle mode vintage et touche moderne. Le 21 mai 2025, à Matadero Madrid.</dd>
+        <dt>Au programme</dt><dd><ul><li><b>Denim Lab durable</b> : ateliers de customisation de vestes et jeans vintage de la marque</li><li><b>Musique live</b> : DJ techno-house et groupes hommage à Blondie, The Rolling Stones, U2</li><li><b>Live-art</b> : artistes qui peignent ou créent avec du denim Levi’s recyclé</li><li><b>Défilé body positive</b> : la diversité des corps et des styles, avec des Levi’s de toutes les époques</li></ul></dd>
+        <dt>En boutique</dt><dd>Une expérience pop-up sensorielle où chacun personnalise sa pièce : patchs, broderies, peinture au pinceau sur le tissu.</dd>
+        <dt>Les valeurs</dt><dd>Engagement, authenticité, durabilité, créativité, communauté.</dd>
+      </dl>
+      <div class="gal g4 fit">
+        <figure><img src="images/l_ny.jpg" alt="Pont de Brooklyn et skyline de New York la nuit" loading="lazy"></figure>
+        <figure><img src="images/l_venue.jpg" alt="Ambiance imaginée du lieu : loft industriel aux canapés Chesterfield" loading="lazy"></figure>
+        <figure><img src="images/l_dj.jpg" alt="Platines DJ devant un mur de graffitis" loading="lazy"></figure>
+        <figure><img src="images/l_star.jpg" alt="Jean customisé avec une étoile peinte" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="nextp">
+      <a href="#dimobe"><small>Projet précédent</small>← Bodega Dimobe</a>
+      <a href="#contact"><small>Envie d’en parler&nbsp;?</small>Me contacter →</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">Emilie Bressange · Portfolio · <a href="mailto:ebressange@gmail.com">ebressange@gmail.com</a></div>
+</footer>
+
+<dialog id="lb" aria-label="Image agrandie"><img id="lbimg" alt=""></dialog>
+
+<script>
+(function(){
+  var views={ 'roger-gallet':'v-roger-gallet','dimobe':'v-dimobe','levis':'v-levis' };
+  var titles={ 'roger-gallet':'Roger & Gallet','dimobe':'Bodega Dimobe','levis':'Levi’s' };
+  var homeAnchors={ apropos:1, projets:1, contact:1 };
+  var base='Emilie Bressange – Portfolio communication & événementiel';
+  function show(id){
+    document.querySelectorAll('.view').forEach(function(v){ v.classList.toggle('on', v.id===id); });
+  }
+  function render(h){
+    if(views[h]){
+      show(views[h]); window.scrollTo(0,0);
+      document.title=titles[h]+' – '+base;
+    } else {
+      show('v-home'); document.title=base;
+      var el=homeAnchors[h]?document.getElementById(h):null;
+      if(el){ requestAnimationFrame(function(){ el.scrollIntoView(); }); }
+      else { window.scrollTo(0,0); }
+    }
+  }
+  function go(h){
+    render(h);
+    try{ if(location.hash!=='#'+h){ location.hash=h; } }catch(e){}
+  }
+  window.addEventListener('hashchange',function(){ render((location.hash||'').replace('#','')); });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]');
+    if(!a) return;
+    e.preventDefault();
+    go(a.getAttribute('href').slice(1));
+  });
+  render((location.hash||'').replace('#',''));
+
+  var lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg');
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t.matches && t.matches('.gal img') && lb.showModal){
+      lbimg.src=t.src; lbimg.alt=t.alt; lb.showModal();
+    } else if(t===lb || t===lbimg){ lb.close(); }
+  });
+})();
+</script>
+</body>
+</html>
